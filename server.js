@@ -46,7 +46,7 @@ app.get('/health', (req, res) => {
 })
 
 // ─── Main Extract Route ─────────────────────────────────────────────────────
-app.post('/api/extract', upload.array('files', 100), async (req, res) => {
+app.post('/api/extract', upload.array('files', 100), async (req, res) => { // ✅ FIX: 20 → 100 files
   try {
     const prompt = req.body.prompt
     const files = req.files || []
